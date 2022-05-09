@@ -15,7 +15,7 @@ const isValidRequestBody = function (requestBody) {
 
 
 const createIntern = async function (req, res) {
-    res.setHeader('Access-Control-Allow-Origin','*')
+    
     try {
         let requestBody = req.body
 
@@ -69,7 +69,7 @@ const createIntern = async function (req, res) {
 
         requestBody.collegeId=collegeId._id
         const createIntern = await internModel.create(requestBody)
-        res.status(201).send({ status: true, data: requestBody })
+        res.status(201).send({ status: true, data:createIntern  })
 
     } catch (error){
         console.log(error)

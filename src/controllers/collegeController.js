@@ -53,7 +53,7 @@ const createCollege = async function (req, res) {
         if(uniqueFullNameCheck){
         return res.status(400).send({status:false,msg:"this full  name already exist"})}
 
-        let collegeCreate = await collegeModel.create(requestBody)
+        let collegeCreate = await collegeModel.create(requestBody)-
         res.status(201).send({ status: true, data: collegeCreate })
 
     } catch (error) {
@@ -91,7 +91,7 @@ const collegeDetailsWithIntern = async function(req, res){
         res.status(200).send({status: true, data: data})
 
     } catch (error){
-        res.status(500).send({error : error.message})
+        res.status(500).send({error : error.message})   ``
     }
 }
 
